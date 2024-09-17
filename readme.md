@@ -11,6 +11,7 @@ Realizar uma pesquisa e apresentar o funcionamento de um framework de Mapeamento
 - Sequelize: ORM (Object-Relational Mapping) para Node.js.
 - SQLite: Banco de dados relacional leve e autossuficiente.
 - VSCode: Editor de código recomendado.
+- Extensão SQLite para VSCode: Extensão para Visual Studio Code que facilita a visualização e manipulação de bancos de dados SQLite.
 
 ## Case Utilizado: Gerenciamento de Biblioteca
 
