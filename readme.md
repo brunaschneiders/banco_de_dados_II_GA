@@ -1,5 +1,9 @@
 # Gerenciamento de Biblioteca
 
+## Objetivo
+
+Realizar uma pesquisa e apresentar o funcionamento de um framework de Mapeamento Objeto-Relacional (ORM – Object-Relational Mapping) desenvolvendo um protótipo simples com uma determinada linguagem de programação e para um banco de dados de preferência do grupo.
+
 ## Tecnologias Utilizadas
 
 - Node.js: Ambiente de execução JavaScript.
