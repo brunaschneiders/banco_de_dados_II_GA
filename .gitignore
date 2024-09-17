@@ -41,3 +41,9 @@ coverage/
 
 # Windows specific files
 Thumbs.db
+
+# Build files
+/dist
+
+# Temporary files
+/tmp
