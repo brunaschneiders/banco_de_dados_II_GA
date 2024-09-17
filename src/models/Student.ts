@@ -29,15 +29,11 @@ Student.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    name: { type: DataTypes.STRING, allowNull: false },
   },
   {
     sequelize,
     modelName: "Student",
   }
 );
-
 export default Student;

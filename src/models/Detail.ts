@@ -1,40 +1,29 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../config/database";
-import Detail from "./Detail";
 
-interface BookAttributes {
+interface DetailAttributes {
   id: number;
-  title: string;
   summary?: string;
   pageCount?: number;
 }
 
-interface BookCreationAttributes extends Optional<BookAttributes, "id"> {}
+interface DetailCreationAttributes extends Optional<DetailAttributes, "id"> {}
 
-class Book
-  extends Model<BookAttributes, BookCreationAttributes>
-  implements BookAttributes
+class Detail
+  extends Model<DetailAttributes, DetailCreationAttributes>
+  implements DetailAttributes
 {
   public id!: number;
-  public title!: string;
   public summary?: string;
   public pageCount?: number;
-
-  // Association methods
-  public setDetail!: (detail: Detail) => Promise<void>;
-  public getDetail!: () => Promise<Detail>;
 }
 
-Book.init(
+Detail.init(
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
-    },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     summary: {
       type: DataTypes.TEXT,
@@ -47,8 +36,8 @@ Book.init(
   },
   {
     sequelize,
-    modelName: "Book",
+    modelName: "Detail",
   }
 );
 
-export default Book;
+export default Detail;
