@@ -47,21 +47,25 @@ Este projeto implementa um sistema de gerenciamento de biblioteca utilizando Seq
 
 1. Clone o Repositório:
 
-bash
-git clone https://github.com/brunaschneiders/banco_de_dados_II_GA.git
-cd banco_de_dados_II_GA
+```bash
+    git clone https://github.com/brunaschneiders/banco_de_dados_II_GA.git
+    cd banco_de_dados_II_GA
+```
 
 2. Instale as Dependências:
 
-bash
-npm install
+```bash
+    npm install
+```
 
 3. Compile o TypeScript:
 
-bash
-npx tsc
+```bash
+    npx tsc
+```
 
 4. Execute o Script de Inserção de Dados e Consultas:
 
-bash
-node dist/scripts/data.js
+```bash
+    node dist/scripts/data.js
+```
