@@ -5,8 +5,6 @@ import Detail from "./Detail";
 interface BookAttributes {
   id: number;
   title: string;
-  summary?: string;
-  pageCount?: number;
 }
 
 interface BookCreationAttributes extends Optional<BookAttributes, "id"> {}
@@ -17,8 +15,6 @@ class Book
 {
   public id!: number;
   public title!: string;
-  public summary?: string;
-  public pageCount?: number;
 
   // Association methods
   public setDetail!: (detail: Detail) => Promise<void>;
@@ -35,14 +31,6 @@ Book.init(
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    summary: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    pageCount: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
     },
   },
   {

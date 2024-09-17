@@ -3,6 +3,7 @@ import Book from "./Book";
 import Detail from "./Detail";
 import Loan from "./Loan";
 import Student from "./Student";
+import sequelize from "../config/database";
 
 // Relationships
 Author.hasMany(Book, { onDelete: "CASCADE" });
@@ -18,7 +19,6 @@ Loan.belongsTo(Book);
 Loan.belongsTo(Student);
 
 // Sync with Database
-import sequelize from "../config/database";
 sequelize.sync({ force: true }).then(() => {
   console.log("Database & tables created!");
 });
