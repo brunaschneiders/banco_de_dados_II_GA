@@ -43,19 +43,39 @@ async function createData() {
 
 async function fetchData() {
   const authors = await Author.findAll({ include: [Book] });
+  console.log("Authors with their books:");
   console.log(JSON.stringify(authors, null, 2));
 
   const books = await Book.findAll({ include: [Detail, Author, Student] });
+  console.log("Books with their details, authors, and students:");
   console.log(JSON.stringify(books, null, 2));
 
   const students = await Student.findAll({ include: [Book] });
+  console.log("Students with their borrowed books:");
   console.log(JSON.stringify(students, null, 2));
 
   const loans = await Loan.findAll({ include: [Book, Student] });
+  console.log("Loans with their associated books and students:");
   console.log(JSON.stringify(loans, null, 2));
+}
+
+async function updateReturnDate(loanId: number, returnDate: Date) {
+  const loan = await Loan.findByPk(loanId);
+  if (loan) {
+    loan.returnDate = returnDate;
+    await loan.save();
+    console.log(`Return date for loan ${loanId} updated to ${returnDate}`);
+  } else {
+    console.log(`Loan with ID ${loanId} not found`);
+  }
 }
 
 sequelize.sync({ force: true }).then(() => {
   console.log("Database & tables created!");
-  createData().then(() => fetchData());
+  createData().then(() => {
+    // Update the return date for a specific loan
+    updateReturnDate(1, new Date("2024-12-31")).then(() => {
+      fetchData();
+    });
+  });
 });
